@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watermark Tool - 在线图片水印工具 | 文字水印添加</title>
+  <meta name="description" content="免费在线图片水印添加工具。上传图片，添加文字水印，自定义字体、颜色、透明度、位置、旋转角度。浏览器端处理，图片不上传。">
+  <meta name="keywords" content="watermark tool, add watermark, image watermark, photo watermark, 图片水印, 添加水印, 文字水印, 版权保护">
+  <meta name="author" content="Dudu Tools">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://watermark-tool.vercel.app/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Watermark Tool - 在线图片水印工具">
+  <meta property="og:description" content="免费在线图片水印添加工具。自定义文字水印，保护图片版权。浏览器端处理。">
+  <meta property="og:url" content="https://watermark-tool.vercel.app/">
+  <meta property="og:site_name" content="Watermark Tool">
+  <meta property="og:locale" content="zh_CN">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Watermark Tool - 在线图片水印工具">
+  <meta name="twitter:description" content="免费在线图片水印添加工具。自定义文字水印，保护图片版权。">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Watermark Tool",
+    "description": "免费在线图片水印添加工具。上传图片，添加文字水印，自定义字体、颜色、透明度、位置、旋转角度。浏览器端处理。",
+    "url": "https://watermark-tool.vercel.app/",
+    "applicationCategory": "Multimedia",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "featureList": ["图片上传与预览","文字水印添加","水印位置预设","透明度/大小/旋转调节","平铺水印模式","下载添加水印后的图片"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"水印工具可以在线使用吗？","acceptedAnswer":{"@type":"Answer","text":"是的，完全免费在线使用，无需注册或安装任何软件。"}},
+      {"@type":"Question","name":"添加水印会影响原图质量吗？","acceptedAnswer":{"@type":"Answer","text":"工具在原图上叠加水印并导出，可以选择 PNG（无损）或 JPG（可调质量）格式，最大程度保留画质。"}},
+      {"@type":"Question","name":"图片安全吗？会泄露吗？","acceptedAnswer":{"@type":"Answer","text":"所有处理在浏览器端完成，图片不上传任何服务器，您的图片非常安全。"}},
+      {"@type":"Question","name":"支持哪些图片格式？","acceptedAnswer":{"@type":"Answer","text":"支持 JPG、PNG、WebP、GIF、BMP 等常见图片格式。导出支持 PNG 和 JPG。"}}
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <h1 class="logo">💧 Watermark Tool</h1>
+        <p class="tagline">在线图片水印 · 保护版权 · 浏览器端处理 · 安全隐私</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="main container">
+    <div class="card">
+      <!-- Upload -->
+      <div class="upload-section" id="upload-section">
+        <div id="drop-zone" class="drop-zone">
+          <div class="drop-content">
+            <span class="drop-icon">🖼️</span>
+            <p>拖拽图片到此处或点击选择</p>
+            <p class="drop-hint">支持 JPG / PNG / WebP / GIF / BMP</p>
+          </div>
+          <input type="file" id="file-input" class="file-input" accept="image/*">
+        </div>
+      </div>
+
+      <!-- Editor -->
+      <div id="editor-section" class="editor-section" style="display:none">
+        <div class="editor-layout">
+          <!-- Preview -->
+          <div class="preview-col">
+            <div class="preview-header">
+              <h3>预览</h3>
+              <span id="img-info" class="img-info"></span>
+            </div>
+            <div id="canvas-container" class="canvas-container">
+              <canvas id="preview-canvas"></canvas>
+            </div>
+            <div class="preview-actions">
+              <div class="zoom-controls">
+                <button class="btn btn-sm" onclick="zoomOut()">🔍−</button>
+                <span id="zoom-level" class="zoom-level">100%</span>
+                <button class="btn btn-sm" onclick="zoomIn()">🔍+</button>
+                <button class="btn btn-sm" onclick="fitView()">适配</button>
+              </div>
+              <div class="export-controls">
+                <select id="export-format" class="small-select">
+                  <option value="image/png">PNG（无损）</option>
+                  <option value="image/jpeg">JPG（可压缩）</option>
+                </select>
+                <select id="export-quality" class="small-select" style="display:none">
+                  <option value="0.9">高质量 90%</option>
+                  <option value="0.8" selected>中等 80%</option>
+                  <option value="0.6">低 60%</option>
+                </select>
+                <button class="btn btn-primary" onclick="downloadImage()">⬇ 下载</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <div class="controls-col">
+            <div class="control-group">
+              <h3>水印文字</h3>
+              <input type="text" id="wm-text" class="text-input" value="© Dudu Tools" oninput="renderWatermark()">
+            </div>
+
+            <div class="control-group">
+              <h3>字体</h3>
+              <select id="wm-font" class="small-select" onchange="renderWatermark()">
+                <option value="Arial">Arial</option>
+                <option value="'Helvetica Neue'">Helvetica Neue</option>
+                <option value="Georgia">Georgia</option>
+                <option value="'Times New Roman'">Times New Roman</option>
+                <option value="'Courier New'">Courier New</option>
+                <option value="'Microsoft YaHei'">微软雅黑</option>
+                <option value="'Noto Sans SC'">Noto Sans SC</option>
+                <option value="Impact">Impact</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <h3>字号</h3>
+              <div class="slider-row">
+                <input type="range" id="wm-size" min="12" max="200" value="48" oninput="updateSizeLabel();renderWatermark()">
+                <span id="wm-size-label" class="slider-val">48px</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <h3>透明度</h3>
+              <div class="slider-row">
+                <input type="range" id="wm-opacity" min="0.05" max="1" step="0.05" value="0.4" oninput="updateOpacityLabel();renderWatermark()">
+                <span id="wm-opacity-label" class="slider-val">40%</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <h3>颜色</h3>
+              <div class="color-row">
+                <input type="color" id="wm-color" value="#ffffff" onchange="renderWatermark()">
+                <input type="color" id="wm-shadow" value="#000000" onchange="renderWatermark()">
+                <label class="checkbox-label"><input type="checkbox" id="wm-shadow-enable" checked onchange="renderWatermark()"> 阴影</label>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <h3>旋转</h3>
+              <div class="slider-row">
+                <input type="range" id="wm-rotation" min="-90" max="90" value="-30" oninput="updateRotationLabel();renderWatermark()">
+                <span id="wm-rotation-label" class="slider-val">-30°</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <h3>位置</h3>
+              <div class="position-grid">
+                <button class="pos-btn" data-pos="top-left">↖</button>
+                <button class="pos-btn" data-pos="top-center">↑</button>
+                <button class="pos-btn" data-pos="top-right">↗</button>
+                <button class="pos-btn" data-pos="center-left">←</button>
+                <button class="pos-btn active" data-pos="center">●</button>
+                <button class="pos-btn" data-pos="center-right">→</button>
+                <button class="pos-btn" data-pos="bottom-left">↙</button>
+                <button class="pos-btn" data-pos="bottom-center">↓</button>
+                <button class="pos-btn" data-pos="bottom-right">↘</button>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <h3>边距</h3>
+              <div class="slider-row">
+                <input type="range" id="wm-margin" min="0" max="100" value="20" oninput="updateMarginLabel();renderWatermark()">
+                <span id="wm-margin-label" class="slider-val">20px</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="checkbox-label" style="font-size:.85rem">
+                <input type="checkbox" id="wm-tiled" onchange="renderWatermark()">
+                平铺水印（重复覆盖整张图片）
+              </label>
+            </div>
+
+            <div class="control-group">
+              <label class="checkbox-label" style="font-size:.85rem">
+                <input type="checkbox" id="wm-bold" onchange="renderWatermark()">
+                加粗
+              </label>
+              <label class="checkbox-label" style="font-size:.85rem">
+                <input type="checkbox" id="wm-italic" onchange="renderWatermark()">
+                斜体
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>💧 Watermark Tool — 所有处理在浏览器端完成，图片不上传服务器</p>
+      <p class="footer-small">纯前端工具 · 零服务端 · 隐私安全</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
