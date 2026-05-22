@@ -1,37 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Watermark Tool Online | Add Text Watermarks to Images</title>
-  <meta name="description" content="Add text watermarks to images online. Customize font, color, opacity, position, rotation, tiling, and export PNG or JPG in your browser.">
-  <meta name="keywords" content="watermark tool, add watermark, image watermark, photo watermark, text watermark, watermark photos online">
+  <title>Watermark Tool - 在线图片水印工具 | 文字水印添加</title>
+  <meta name="description" content="免费在线图片水印添加工具。上传图片，添加文字水印，自定义字体、颜色、透明度、位置、旋转角度。浏览器端处理，图片不上传。">
+  <meta name="keywords" content="watermark tool, add watermark, image watermark, photo watermark, 图片水印, 添加水印, 文字水印, 版权保护">
   <meta name="author" content="ImagePrivacy">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://watermark.imageprivacy.org/">
+  <link rel="canonical" href="https://watermark.imageprivacy.org/zh/">
   <link rel="alternate" hreflang="en" href="https://watermark.imageprivacy.org/">
   <link rel="alternate" hreflang="zh-CN" href="https://watermark.imageprivacy.org/zh/">
   <link rel="alternate" hreflang="x-default" href="https://watermark.imageprivacy.org/">
 <meta property="og:type" content="website">
-  <meta property="og:title" content="Watermark Tool Online | Add Text Watermarks to Images">
-  <meta property="og:description" content="Add text watermarks to images online. Customize font, color, opacity, position, rotation, tiling, and export PNG or JPG in your browser.">
-  <meta property="og:url" content="https://watermark.imageprivacy.org/">
+  <meta property="og:title" content="Watermark Tool - 在线图片水印工具">
+  <meta property="og:description" content="免费在线图片水印添加工具。自定义文字水印，保护图片版权。浏览器端处理。">
+  <meta property="og:url" content="https://watermark.imageprivacy.org/zh/">
   <meta property="og:site_name" content="Watermark Tool">
-  <meta property="og:locale" content="en_US">
+  <meta property="og:locale" content="zh_CN">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Watermark Tool Online | Add Text Watermarks to Images">
-  <meta name="twitter:description" content="Add text watermarks to images online. Customize font, color, opacity, position, rotation, tiling, and export PNG or JPG in your browser.">
+  <meta name="twitter:title" content="Watermark Tool - 在线图片水印工具">
+  <meta name="twitter:description" content="免费在线图片水印添加工具。自定义文字水印，保护图片版权。">
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="../css/style.css">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Watermark Tool",
-  "description": "Add text watermarks to images online. Customize font, color, opacity, position, rotation, tiling, and export PNG or JPG in your browser.",
-  "url": "https://watermark.imageprivacy.org/",
-  "inLanguage": "en",
+  "description": "免费在线图片水印添加工具。上传图片，添加文字水印，自定义字体、颜色、透明度、位置、旋转角度。浏览器端处理，图片不上传。",
+  "url": "https://watermark.imageprivacy.org/zh/",
+  "inLanguage": "zh-CN",
   "applicationCategory": "MultimediaApplication",
   "operatingSystem": "All",
   "browserRequirements": "Requires JavaScript",
@@ -59,56 +59,51 @@
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "inLanguage": "en",
+  "inLanguage": "zh-CN",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Can I add a watermark online for free?",
+      "name": "可以免费在线加水印吗？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. The watermark tool runs in the browser and is free to use."
+        "text": "可以，工具免费并在浏览器端运行。"
       }
     },
     {
       "@type": "Question",
-      "name": "Are images uploaded to a server?",
+      "name": "图片会上传服务器吗？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Image preview, watermark rendering, and export happen locally in your browser."
+        "text": "不会。预览、渲染和导出都在浏览器端完成。"
       }
     },
     {
       "@type": "Question",
-      "name": "Which image formats are supported?",
+      "name": "支持哪些图片格式？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Common formats such as JPG, PNG, WebP, GIF, and BMP are supported for input. Export supports PNG and JPG."
+        "text": "输入支持 JPG、PNG、WebP、GIF、BMP 等常见格式，导出支持 PNG 和 JPG。"
       }
     },
     {
       "@type": "Question",
-      "name": "Can I control watermark placement?",
+      "name": "可以控制水印位置吗？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. You can choose preset positions, margins, rotation, opacity, and tiled mode."
+        "text": "可以设置预设位置、边距、旋转、透明度和平铺模式。"
       }
     }
   ]
 }
   </script>
-
-  <!-- Vercel Analytics -->
-  <script defer src="/_vercel/insights/script.js"></script>
-  <!-- Vercel Speed Insights -->
-  <script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 <body>
   <header class="header">
     <div class="container">
       <div class="header-inner">
         <h1 class="logo">💧 Watermark Tool</h1>
-        <p class="tagline">Add image watermarks · customize text, position, opacity, and export format</p>
-        <nav class="language-switcher" aria-label="Language"><a class="home-link" href="https://imageprivacy.org/">ImagePrivacy</a><a class="active" href="./" lang="en">EN</a><a class="" href="zh/" lang="zh-CN">中文</a></nav>
+        <p class="tagline">在线图片水印 · 保护版权 · 浏览器端处理 · 安全隐私</p>
+        <nav class="language-switcher" aria-label="Language"><a class="home-link" href="https://imageprivacy.org/zh/">图片隐私首页</a><a class="" href="../" lang="en">EN</a><a class="active" href="./" lang="zh-CN">中文</a></nav>
       </div>
     </div>
   </header>
@@ -120,8 +115,8 @@
         <div id="drop-zone" class="drop-zone">
           <div class="drop-content">
             <span class="drop-icon">🖼️</span>
-            <p>Drop an image here or click to choose</p>
-            <p class="drop-hint">Supports JPG / PNG / WebP / GIF / BMP</p>
+            <p>拖拽图片到此处或点击选择</p>
+            <p class="drop-hint">支持 JPG / PNG / WebP / GIF / BMP</p>
           </div>
           <input type="file" id="file-input" class="file-input" accept="image/*">
         </div>
@@ -133,7 +128,7 @@
           <!-- Preview -->
           <div class="preview-col">
             <div class="preview-header">
-              <h3>Preview</h3>
+              <h3>预览</h3>
               <span id="img-info" class="img-info"></span>
             </div>
             <div id="canvas-container" class="canvas-container">
@@ -144,19 +139,19 @@
                 <button class="btn btn-sm" onclick="zoomOut()">🔍−</button>
                 <span id="zoom-level" class="zoom-level">100%</span>
                 <button class="btn btn-sm" onclick="zoomIn()">🔍+</button>
-                <button class="btn btn-sm" onclick="fitView()">Fit</button>
+                <button class="btn btn-sm" onclick="fitView()">适配</button>
               </div>
               <div class="export-controls">
                 <select id="export-format" class="small-select">
-                  <option value="image/png">PNG (lossless)</option>
-                  <option value="image/jpeg">JPG (compressed)</option>
+                  <option value="image/png">PNG（无损）</option>
+                  <option value="image/jpeg">JPG（可压缩）</option>
                 </select>
                 <select id="export-quality" class="small-select" style="display:none">
-                  <option value="0.9">High quality 90%</option>
-                  <option value="0.8" selected>Medium 80%</option>
-                  <option value="0.6">Low 60%</option>
+                  <option value="0.9">高质量 90%</option>
+                  <option value="0.8" selected>中等 80%</option>
+                  <option value="0.6">低 60%</option>
                 </select>
-                <button class="btn btn-primary" onclick="downloadImage()">Download</button>
+                <button class="btn btn-primary" onclick="downloadImage()">⬇ 下载</button>
               </div>
             </div>
           </div>
@@ -164,26 +159,26 @@
           <!-- Controls -->
           <div class="controls-col">
             <div class="control-group">
-              <h3>Watermark text</h3>
+              <h3>水印文字</h3>
               <input type="text" id="wm-text" class="text-input" value="© ImagePrivacy" oninput="renderWatermark()">
             </div>
 
             <div class="control-group">
-              <h3>Font</h3>
+              <h3>字体</h3>
               <select id="wm-font" class="small-select" onchange="renderWatermark()">
                 <option value="Arial">Arial</option>
                 <option value="'Helvetica Neue'">Helvetica Neue</option>
                 <option value="Georgia">Georgia</option>
                 <option value="'Times New Roman'">Times New Roman</option>
                 <option value="'Courier New'">Courier New</option>
-                <option value="'Microsoft YaHei'">Microsoft YaHei</option>
+                <option value="'Microsoft YaHei'">微软雅黑</option>
                 <option value="'Noto Sans SC'">Noto Sans SC</option>
                 <option value="Impact">Impact</option>
               </select>
             </div>
 
             <div class="control-group">
-              <h3>Font size</h3>
+              <h3>字号</h3>
               <div class="slider-row">
                 <input type="range" id="wm-size" min="12" max="200" value="48" oninput="updateSizeLabel();renderWatermark()">
                 <span id="wm-size-label" class="slider-val">48px</span>
@@ -191,7 +186,7 @@
             </div>
 
             <div class="control-group">
-              <h3>Opacity</h3>
+              <h3>透明度</h3>
               <div class="slider-row">
                 <input type="range" id="wm-opacity" min="0.05" max="1" step="0.05" value="0.4" oninput="updateOpacityLabel();renderWatermark()">
                 <span id="wm-opacity-label" class="slider-val">40%</span>
@@ -199,16 +194,16 @@
             </div>
 
             <div class="control-group">
-              <h3>Color</h3>
+              <h3>颜色</h3>
               <div class="color-row">
                 <input type="color" id="wm-color" value="#ffffff" onchange="renderWatermark()">
                 <input type="color" id="wm-shadow" value="#000000" onchange="renderWatermark()">
-                <label class="checkbox-label"><input type="checkbox" id="wm-shadow-enable" checked onchange="renderWatermark()"> Shadow</label>
+                <label class="checkbox-label"><input type="checkbox" id="wm-shadow-enable" checked onchange="renderWatermark()"> 阴影</label>
               </div>
             </div>
 
             <div class="control-group">
-              <h3>Rotation</h3>
+              <h3>旋转</h3>
               <div class="slider-row">
                 <input type="range" id="wm-rotation" min="-90" max="90" value="-30" oninput="updateRotationLabel();renderWatermark()">
                 <span id="wm-rotation-label" class="slider-val">-30°</span>
@@ -216,7 +211,7 @@
             </div>
 
             <div class="control-group">
-              <h3>Position</h3>
+              <h3>位置</h3>
               <div class="position-grid">
                 <button class="pos-btn" data-pos="top-left">↖</button>
                 <button class="pos-btn" data-pos="top-center">↑</button>
@@ -231,7 +226,7 @@
             </div>
 
             <div class="control-group">
-              <h3>Margin</h3>
+              <h3>边距</h3>
               <div class="slider-row">
                 <input type="range" id="wm-margin" min="0" max="100" value="20" oninput="updateMarginLabel();renderWatermark()">
                 <span id="wm-margin-label" class="slider-val">20px</span>
@@ -241,60 +236,60 @@
             <div class="control-group">
               <label class="checkbox-label" style="font-size:.85rem">
                 <input type="checkbox" id="wm-tiled" onchange="renderWatermark()">
-                Tile watermark across the image
+                平铺水印（重复覆盖整张图片）
               </label>
             </div>
 
             <div class="control-group">
               <label class="checkbox-label" style="font-size:.85rem">
                 <input type="checkbox" id="wm-bold" onchange="renderWatermark()">
-                Bold
+                加粗
               </label>
               <label class="checkbox-label" style="font-size:.85rem">
                 <input type="checkbox" id="wm-italic" onchange="renderWatermark()">
-                Italic
+                斜体
               </label>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <section class="seo-content" aria-label="Tool guide and frequently asked questions">
+    <section class="seo-content" aria-label="工具说明和常见问题">
       <div class="seo-block">
-        <h2>What is Watermark Tool?</h2>
-        <p>An online image watermark tool for adding customizable text watermarks to photos. Images are processed in the browser and are not uploaded.</p>
+        <h2>Watermark Tool 是什么？</h2>
+        <p>一个在线图片文字水印工具，可自定义字体、颜色、透明度、位置、旋转、平铺模式并导出 PNG/JPG。</p>
       </div>
       <div class="seo-grid">
         <div class="seo-block">
-          <h2>Key Features</h2>
+          <h2>主要功能</h2>
           <ul><li>Upload and preview images</li><li>Add custom text watermarks</li><li>Adjust font, size, color, opacity, and rotation</li><li>Choose preset watermark positions</li><li>Use tiled watermark mode</li><li>Export PNG or JPG</li></ul>
         </div>
         <div class="seo-block">
-          <h2>Common Use Cases</h2>
-          <ul><li>Protect product photos</li><li>Brand social images</li><li>Prepare previews for clients</li><li>Add copyright marks before publishing</li></ul>
+          <h2>适合场景</h2>
+          <ul><li>开发、调试或发布前的日常处理</li><li>在浏览器端快速完成任务，减少数据上传</li><li>为技术文档、测试数据或线上内容做准备</li></ul>
         </div>
       </div>
       <div class="seo-block faq-list">
-        <h2>Frequently Asked Questions</h2>
-        <details><summary>Can I add a watermark online for free?</summary><p>Yes. The watermark tool runs in the browser and is free to use.</p></details>
-        <details><summary>Are images uploaded to a server?</summary><p>No. Image preview, watermark rendering, and export happen locally in your browser.</p></details>
-        <details><summary>Which image formats are supported?</summary><p>Common formats such as JPG, PNG, WebP, GIF, and BMP are supported for input. Export supports PNG and JPG.</p></details>
-        <details><summary>Can I control watermark placement?</summary><p>Yes. You can choose preset positions, margins, rotation, opacity, and tiled mode.</p></details>
+        <h2>常见问题</h2>
+        <details><summary>可以免费在线加水印吗？</summary><p>可以，工具免费并在浏览器端运行。</p></details>
+        <details><summary>图片会上传服务器吗？</summary><p>不会。预览、渲染和导出都在浏览器端完成。</p></details>
+        <details><summary>支持哪些图片格式？</summary><p>输入支持 JPG、PNG、WebP、GIF、BMP 等常见格式，导出支持 PNG 和 JPG。</p></details>
+        <details><summary>可以控制水印位置吗？</summary><p>可以设置预设位置、边距、旋转、透明度和平铺模式。</p></details>
       </div>
       <div class="seo-block related-tools">
-        <h2>Related tools</h2>
-        <div class="related-links"><a href="https://exif.imageprivacy.org/">EXIF Remover</a><a href="https://imageprivacy.org/">ImagePrivacy Tools</a><a href="https://color.toolkitbox.org/">Color Tool</a></div>
+        <h2>相关工具</h2>
+        <div class="related-links"><a href="https://exif.imageprivacy.org/zh/">EXIF 移除工具</a><a href="https://imageprivacy.org/zh/">图片隐私工具首页</a><a href="https://color.toolkitbox.org/zh/">颜色工具</a></div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <p>💧 Watermark Tool — All image processing runs in your browser. Images are not uploaded.</p>
-      <p class="footer-small">Frontend-only tool · no server storage · privacy-first</p>
+      <p>💧 Watermark Tool — 所有处理在浏览器端完成，图片不上传服务器</p>
+      <p class="footer-small">纯前端工具 · 零服务端 · 隐私安全</p>
     </div>
   </footer>
 
-  <script src="js/app.js"></script>
+  <script src="../js/app.js"></script>
 </body>
 </html>
